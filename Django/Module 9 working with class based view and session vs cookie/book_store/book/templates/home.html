@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+{% block tite %} home {%endblock%}
+
+
+{% block content %}
+
+<div style="width: 70% ; margin: auto; color: white; font-size: 50px;">
+    <h1>Wellcome to Book Store Management </h1>
+    <h1> Name : {{name}} </h1>
+    <h1> Age : {{age}} </h1>
+    <h1> Roll : {{roll}} </h1>
+    <h1> Author : {{author}} </h1>
+</div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'first/css/style.css '%} "/>
+    
+</head>
+<body>
+        <h1>we are inside app</h1>
+        <h1>Author name: {{name}}</h1>
+       
+        <img src="{% static 'first/images/logo1.png' %} " alt="Logo pic">
+        <img src="{% get_static_prefix %}first/images/pic1.png " alt=" design pic">
+        <script src="{% static 'first/js/index.js' %}"></script>
+
+        <!-- {% if age >= 18 %}
+        <p>vai tumi driving license nite parba</p>
+        {% else %}
+        <p>tumi ekta sishu. basay jao</p>
+        {% endif %} -->
+
+         <!-- {% if marks >= 80 %}
+        <p>vai tumi goden A+ marks paiso</p>
+        {% elif marks >= 70 %}
+        <p>vai tumi golden A paico </p>
+        {% elif marks >= 50 %}
+        <p>vai tumi avarage marks paico</p>        
+        {% else %}
+        <p>tumi fail korso ,tumi ekta bolod</p>
+        {% endif %}
+        -->
+
+        <!-- <table border="1" width = 500>
+            <tr>
+                <th>Id</th>
+                <th>Course</th>
+                <th>Teacher</th>
+            </tr>
+            
+                {% for i in courses %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.course}}</td>
+                <td>{{i.teacher}}</td>
+            </tr> 
+                {% endfor %}
+                       
+        </table> -->
+        <!-- return add vaue -->
+        <h1>{{marks | add:"2"}}</h1>
+        <!-- return boolen value if divisible by argument -->
+        <h1>{{ marks | divisibleby:"2" }}</h1>
+        <!-- count length -->
+        <h1>{{name | length}}</h1>
+        <!-- word count -->
+        <h1>{{blog | wordcount}}</h1>
+        <!-- slugify hi phen add between word-->
+        <h1>{{name | slugify}}</h1>
+        <!-- random -->
+        <h1>{{list | random}}</h1>
+        <!-- make list -->
+        <h1>{{marks | make_list}}</h1>
+        <!-- linenumbers -->
+        <h1>{{list | linenumbers}}</h1>
+        <!-- find first and last item -->
+        <h1>{{list | last}}</h1>
+        <!-- filesize formet -->
+        <h1>{{marks | filesizeformat}}</h1>
+        <!-- trunket -->
+        <h1>{{blog |truncatewords:"5"}}</h1>
+        <h1>{{blog |truncatechars:"20"}}</h1>
+        <!-- join -->
+        <h1>{{list | join:"*"}}</h1>
+        
+
+
+    
+    
+
+</body>
+</html>

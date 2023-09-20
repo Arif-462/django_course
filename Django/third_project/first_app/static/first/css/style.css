@@ -1,0 +1,8 @@
+body{
+    background-color: rgb(213, 165, 5);
+}
+h1{
+    color :rgb(255, 0, 212);
+    border: 2 solid rgb(90, 14, 255) ;
+    text-align: center;
+}

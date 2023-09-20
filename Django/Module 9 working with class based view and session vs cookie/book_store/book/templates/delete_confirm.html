@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block tite %} delete Book {%endblock%}
+{% block content %}
+<div style="color: rgb(240, 166, 7); width: 50%; margin: auto;">
+    <h1 style="font-weight: bold; margin-bottom: 20px ; font-size: 40px; text-align: center;">Confirm you delete this ?</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{form}}
+  
+      <button style="color: rgb(240, 166, 7);" class="btn btn-info" type="submit">Confirm</button>
+  
+    </form>
+  
+  </div>
+
+{% endblock %}

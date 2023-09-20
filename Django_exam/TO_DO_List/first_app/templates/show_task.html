@@ -1,0 +1,52 @@
+{% extends 'base.html'%} {% load crispy_forms_tags %} {% block title %} show
+task {% endblock %} {% block content %}
+
+<div style="width: 60%; margin: auto; text-align: center; margin-top: 50px">
+  <div style="
+      border-radius: 5px;
+      text-align: center;
+      width: 450px;
+      margin: auto;
+      background-color: rgb(85, 19, 161);
+    ">
+    <h1 style="color: white">Tasks</h1>
+  </div>
+  <table class="table" style="border: 2px solid black">
+    <thead>
+      <tr>
+        <!-- <th style="border: 1px solid black;">Id</th> -->
+        <th style="border: 1px solid black">Title</th>
+        <th style="border: 1px solid black">Description</th>
+        <th style="border: 1px solid black">Status</th>
+        <th style="border: 1px solid black">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in task %} {% if item.is_completed == False %}
+      <tr>
+        <!-- <td style="border: 1px solid black;">{{item.id}}</td> -->
+        <td style="border: 1px solid black">{{item.title}}</td>
+        <td style="border: 1px solid black">{{item.description}}</td>
+        {% if item.is_completed == True %}
+        <td style="border: 1px solid black">Completed</td>
+        {% else %}
+        <td style="border: 1px solid black">Incompleted</td>
+        {% endif %}
+        <td style="border: 1px solid black">
+          <a href="{% url 'del_task' id=item.id %} " style="background-color: rgb(237, 16, 16)"
+            class="btn btn-dark btn-sm">Delete</a>
+          <a href=" {% url 'edit_task' id=item.id %} " style="background-color: rgb(10, 10, 182)"
+            class="btn btn-dark btn-sm">Edit</a>
+          <a href="{% url 'completed' id=item.id %}" style="background-color: rgb(5, 106, 5)"
+            class="btn btn-dark btn-sm">Completed</a>
+        </td>
+      </tr>
+      {%endif%} {% endfor %}
+    </tbody>
+  </table>
+  {% if not task %}
+
+  <h1 style="text-align: center">No Task Available</h1>
+</div>
+
+{% endif %} {% endblock %}

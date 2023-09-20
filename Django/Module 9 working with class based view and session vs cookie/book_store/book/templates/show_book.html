@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% block tite %} Show Book {%endblock%}
+
+
+{% block content %}
+<div style=" width: 70%; margin: auto; color: rgb(240, 166, 7); ">
+    <h1 style="font-weight: bold; margin-bottom: 20px ; font-size: 40px; text-align: center;">Here your Books List</h1>
+    
+    {% if booklist %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Book Name</th>          
+        </thead>
+        <tbody>
+          {% for item in booklist %}
+          <tr>
+            <td>{{item.id}}</td>
+            <td><a href="{% url 'Book_details' item.id %}">{{item.Book_name}}</a></td>
+           
+          </tr>  
+          
+          {% endfor %}
+        </tbody>
+      </table>
+
+    {% else %}
+    <h1></h1>
+    <h1 style="text-align: center;">No Data Available</h1>
+    {% endif %}
+
+</div>
+
+{% endblock %}

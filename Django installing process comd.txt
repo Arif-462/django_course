@@ -1,0 +1,12 @@
+virtual installing process:
+
+step-1: Installing virtualenv :
+	$ pip install virtualenv
+step-2: Test your installiin :
+	$ pip install virtualenv
+step-3: Naming virtualenv :
+	$ virtualenv my_env
+step-4: Activating virtual Env :
+	$ source ./my_env/Scripts/activate
+step-5: Deactivateing virtual Env :
+	$ deactivate        ($ my_env/Scripts>deactivate)
